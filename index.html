@@ -3,153 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chaitali Mehta | Senior Network Engineer</title>
+<title>Chaitali Mehta - Digital Business Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--cream:#FDF8F0;--gold:#C9A84C;--gold-light:#E8D5A3;--gold-dark:#8B6914;--dark:#1A1A2E;--text:#333;--text-light:#666}
-body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
-#splash{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,var(--dark) 0%,#16213e 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity 0.8s,transform 0.8s}
-#splash.hide{opacity:0;transform:scale(1.1);pointer-events:none}
-#splash .logo{font-family:'Playfair Display',serif;font-size:5rem;font-weight:700;background:linear-gradient(135deg,var(--gold),var(--gold-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:pulse 1.5s ease-in-out infinite}
-#splash .tagline{color:rgba(255,255,255,0.7);font-size:1.1rem;margin-top:1rem;letter-spacing:3px;text-transform:uppercase}
-#splash .enter-btn{margin-top:2.5rem;padding:1rem 3rem;background:linear-gradient(135deg,var(--gold),var(--gold-dark));border:none;border-radius:50px;color:var(--dark);font-weight:600;font-size:1rem;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s}
-#splash .enter-btn:hover{transform:scale(1.05);box-shadow:0 10px 40px rgba(201,168,76,0.4)}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.7}}
-#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
-.shooting-star{position:fixed;width:100px;height:2px;background:linear-gradient(90deg,rgba(255,255,255,0.8),transparent);border-radius:50%;animation:shoot 1s linear forwards;pointer-events:none;z-index:1}
-@keyframes shoot{0%{transform:translateX(0) translateY(0) rotate(-45deg);opacity:1}100%{transform:translateX(300px) translateY(300px) rotate(-45deg);opacity:0}}
-.sparkle{position:fixed;width:6px;height:6px;border-radius:50%;background:var(--gold);pointer-events:none;animation:sparkle-anim 0.6s ease-out forwards;z-index:9998}
-@keyframes sparkle-anim{0%{transform:scale(1);opacity:1}100%{transform:scale(0);opacity:0}}
-main{position:relative;z-index:10;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:4rem 2rem 2rem;opacity:0;transition:opacity 1s}
-main.visible{opacity:1}
-.card-container{perspective:1000px;max-width:500px;width:100%}
-.profile-card{background:linear-gradient(145deg,#ffffff 0%,var(--cream) 100%);border-radius:20px;padding:3rem 2rem 2.5rem;box-shadow:0 20px 60px rgba(0,0,0,0.08);transition:transform 0.1s;transform-style:preserve-3d;position:relative;overflow:hidden}
-.profile-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold))}
-.card-container:hover .profile-card{box-shadow:0 30px 80px rgba(0,0,0,0.12)}
-.cm-badge{position:absolute;top:1.5rem;right:1.5rem;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--dark);font-family:'Playfair Display',serif;font-weight:700;font-size:1.3rem;width:50px;height:50px;display:flex;align-items:center;justify-content:center;border-radius:12px;box-shadow:0 4px 15px rgba(201,168,76,0.3)}
-.avatar{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-family:'Playfair Display',serif;font-size:3rem;color:var(--dark);font-weight:700;box-shadow:0 8px 30px rgba(201,168,76,0.3)}
-.name{text-align:center;font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--dark);margin-bottom:0.3rem}
-.title-text{display:block;font-size:0.95rem;color:var(--gold-dark);font-weight:500;margin-bottom:0.3rem}
-.org{display:block;text-align:center;color:var(--text-light);font-weight:400;font-size:0.9rem;margin-bottom:2rem}
-.clock-container{text-align:center;margin-bottom:1.5rem;padding:1rem;background:rgba(201,168,76,0.08);border-radius:12px}
-.clock-time{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold-dark);font-weight:700}
-.clock-date{color:var(--text-light);font-size:0.8rem;margin-top:0.3rem}
-.weather-container{text-align:center;margin-bottom:1.5rem;padding:0.8rem;background:rgba(201,168,76,0.05);border-radius:12px}
-.weather-temp{font-size:1.1rem;color:var(--dark);font-weight:600}
-.weather-desc{color:var(--text-light);font-size:0.8rem}
-.info-section{margin-bottom:1.5rem}
-.info-section h3{font-size:0.85rem;text-transform:uppercase;letter-spacing:2px;color:var(--gold-dark);margin-bottom:0.8rem;text-align:center}
-.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem}
-.info-item{padding:0.7rem 0.8rem;background:rgba(201,168,76,0.05);border-radius:10px;text-align:center;font-size:0.85rem;transition:all 0.3s}
-.info-item a{color:var(--dark);text-decoration:none;font-weight:500}
-.info-item a:hover{color:var(--gold-dark)}
-.info-item .label{display:block;font-size:0.7rem;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.2rem}
-.pending-section{margin-bottom:1.5rem;padding:1rem;background:rgba(0,0,0,0.02);border-radius:12px;border:1px dashed rgba(201,168,76,0.3)}
-.pending-section h3{font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;color:var(--text-light);text-align:center;margin-bottom:0.6rem}
-.pending-item{display:inline-block;padding:0.3rem 0.8rem;background:rgba(0,0,0,0.03);border-radius:8px;margin:0.2rem;font-size:0.8rem;color:var(--text-light)}
-.pending-item a{color:var(--text-light);text-decoration:none;font-style:italic}
-.vcard-btn{display:block;width:100%;padding:1rem;background:linear-gradient(135deg,var(--gold),var(--gold-dark));border:none;border-radius:12px;color:var(--dark);font-weight:600;font-size:1rem;cursor:pointer;text-decoration:none;text-align:center;transition:transform 0.3s,box-shadow 0.3s;margin-bottom:1.5rem}
-.vcard-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(201,168,76,0.4)}
-.social-links{display:flex;justify-content:center;gap:0.8rem;flex-wrap:wrap;margin-bottom:1rem}
-.social-link{width:44px;height:44px;border-radius:10px;background:rgba(201,168,76,0.08);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all 0.3s;border:1px solid rgba(201,168,76,0.15)}
-.social-link:hover{background:var(--gold);transform:translateY(-3px);box-shadow:0 5px 15px rgba(201,168,76,0.3)}
-.social-link svg{width:20px;height:20px;fill:var(--gold-dark)}
-.social-link:hover svg{fill:var(--dark)}
-.music-toggle{position:fixed;bottom:2rem;right:2rem;width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-dark));border:none;cursor:pointer;z-index:100;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 20px rgba(201,168,76,0.3);transition:transform 0.3s}
-.music-toggle:hover{transform:scale(1.1)}
-.music-toggle svg{width:22px;height:22px;fill:var(--dark)}
-.reveal{opacity:0;transform:translateY(30px);transition:all 0.8s ease}
-.reveal.active{opacity:1;transform:translateY(0)}
-footer{text-align:center;padding:2rem;color:var(--text-light);font-size:0.8rem;margin-top:2rem}
-footer a{color:var(--gold-dark);text-decoration:none}
-@media(max-width:550px){.profile-card{padding:2rem 1.5rem 1.5rem}.name{font-size:1.6rem}.avatar{width:100px;height:100px;font-size:2.5rem}.info-grid{grid-template-columns:1fr}.cm-badge{top:1rem;right:1rem;width:40px;height:40px;font-size:1.1rem}.pending-section{margin:0 -1rem 1.5rem}}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--cream:#fdf6ec;--gold:#c9a96e;--dark-gold:#a8863f;--light-gold:#d4b896;--dark:#2c2118;--text:#3d2e1f}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;min-height:100vh}
+#splash{position:fixed;inset:0;z-index:9999;background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s ease-out,visibility .6s}
+#splash.hidden{opacity:0;visibility:hidden}
+#splash .logo{font-family:'Playfair Display',serif;font-size:5rem;font-weight:700;color:var(--gold);letter-spacing:.3em}
+.spinner{width:40px;height:40px;margin-top:2rem;border:3px solid var(--light-gold);border-top:3px solid var(--gold);border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#particles{position:fixed;inset:0;z-index:0;pointer-events:none}
+.star{position:fixed;width:3px;height:3px;background:#fff;border-radius:50%;opacity:0;z-index:0}
+.star::after{content:'';position:absolute;top:0;right:0;width:30px;height:1px; background:linear-gradient(90deg,transparent,#fff);transform-origin:right;transform:rotate(-45deg)}
+.container{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:2rem 1rem}
+.card-wrapper{perspective:1000px;width:100%;max-width:420px}
+.card{background:#fff;border-radius:24px;box-shadow:0 20px 60px rgba(168,134,63,.15),0 0 0 1px rgba(201,169,110,.1);overflow:hidden;transition:transform .15s ease-out;transform-style:preserve-3d}
+.card-header{background:linear-gradient(135deg,var(--gold),var(--dark-gold),var(--light-gold));padding:2.5rem 2rem 2rem;text-align:center;position:relative;overflow:hidden}
+.card-header::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,.15),transparent 60%)}
+.card-header .logo-mini{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:#fff;text-shadow:0 2px 4px rgba(0,0,0,.15);letter-spacing:.15em}
+.card-header .tagline{font-size:.7rem;color:rgba(255,255,255,.8);margin-top:.4rem;letter-spacing:.1em;text-transform:uppercase}
+.profile{text-align:center;padding:2rem 2rem 1.5rem}
+.avatar{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--dark-gold));display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-family:'Playfair Display',serif;font-size:2rem;color:#fff;font-weight:700;box-shadow:0 8px 24px rgba(168,134,63,.25)}
+.profile h1{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--dark);margin-bottom:.25rem}
+.profile .title{font-size:.95rem;color:var(--gold);font-weight:500}
+.profile .company{font-size:.8rem;color:#999;margin-top:.15rem;letter-spacing:.05em}
+.widgets{display:flex;justify-content:center;gap:1.5rem;padding:0 2rem 1.5rem}
+.widget{background:var(--cream);border-radius:16px;padding:.8rem 1.2rem;text-align:center;min-width:120px}
+.widget .icon{font-size:1.3rem;margin-bottom:.2rem}
+.widget .value{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:var(--dark)}
+.widget .label{font-size:.65rem;color:#aaa;text-transform:uppercase;letter-spacing:.05em}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--light-gold),transparent);margin:0 2rem}
+.contacts{padding:1.5rem 2rem 1rem}
+.contact-row{display:flex;align-items:center;padding:.7rem 0;border-bottom:1px solid rgba(212,184,150,.2)}
+.contact-row:last-child{border-bottom:none}
+.contact-row .icon-wrap{width:36px;height:36px;border-radius:10px;background:var(--cream);display:flex;align-items:center;justify-content:center;margin-right:.8rem;font-size:.9rem;flex-shrink:0}
+.contact-row a,.contact-row span{font-size:.85rem;color:var(--text);text-decoration:none;word-break:break-all}
+.contact-row a:hover{color:var(--gold)}
+.contact-row.pending{opacity:.45}
+.contact-row.pending span{font-style:italic}
+.actions{display:flex;gap:.8rem;padding:1rem 2rem 2rem;justify-content:center}
+.btn{padding:.75rem 1.8rem;border-radius:50px;border:none;font-family:'Inter',sans-serif;font-size:.85rem;font-weight:500;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem}
+.btn-primary{background:linear-gradient(135deg,var(--gold),var(--dark-gold));color:#fff;box-shadow:0 4px 16px rgba(168,134,63,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(168,134,63,.4)}
+.btn-secondary{background:var(--cream);color:var(--dark-gold);border:1.5px solid var(--light-gold)}
+.btn-secondary:hover{background:var(--light-gold);color:var(--dark)}
+.music-btn{position:fixed;bottom:1.5rem;right:1.5rem;z-index:100;width:48px;height:48px;border-radius:50%;background:var(--gold);border:none;color:#fff;font-size:1.2rem;cursor:pointer;box-shadow:0 4px 16px rgba(168,134,63,.3);transition:all .3s;display:flex;align-items:center;justify-content:center}
+.music-btn:hover{transform:scale(1.1)}
+.music-btn.playing{animation:pulse 1.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 4px 16px rgba(168,134,63,.3)}50%{box-shadow:0 4px 24px rgba(168,134,63,.6)}}
+.reveal{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.25,.46,.45,.94)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.sparkle{position:fixed;width:6px;height:6px;background:var(--gold);border-radius:50%;pointer-events:none;animation:sparkleAnim .6s ease-out forwards;z-index:9999}
+@keyframes sparkleAnim{0%{transform:scale(1);opacity:1}100%{transform:scale(0) translateY(-40px);opacity:0}}
+@media(max-width:480px){.card-wrapper{max-width:100%}.card-header{padding:2rem 1.5rem 1.5rem}.profile{padding:1.5rem}.widgets{padding:0 1.5rem 1rem;gap:.8rem}.widget{min-width:100px;padding:.6rem .8rem}.contacts{padding:1rem 1.5rem}.actions{padding:1rem 1.5rem 1.5rem}.btn{padding:.65rem 1.2rem;font-size:.8rem}.profile h1{font-size:1.3rem}}
 </style>
 </head>
 <body>
-<div id="splash">
-<div class="logo">CM</div>
-<div class="tagline">Chaitali Mehta</div>
-<button class="enter-btn" onclick="enterSite()">Enter &amp;darr;</button>
-</div>
+<div id="splash"><div class="logo">CM</div><div class="spinner"></div></div>
 <canvas id="particles"></canvas>
-<main id="main">
-<div class="card-container reveal" id="card">
-<div class="profile-card">
-<div class="cm-badge">CM</div>
+<button class="music-btn" id="musicBtn" title="Toggle ambient music">♪</button>
+<div class="container">
+<div class="card-wrapper" id="cardWrapper">
+<div class="card" id="card">
+<div class="card-header">
+<div class="logo-mini">CM</div>
+<div class="tagline">TapID • Digital Business Card</div>
+</div>
+<div class="profile reveal">
 <div class="avatar">CM</div>
-<h1 class="name">Chaitali Mehta</h1>
-<span class="title-text">Senior Network Engineer</span>
-<span class="org">Hilton</span>
-<div class="clock-container">
-<div class="clock-time" id="clock">--:--:--</div>
-<div class="clock-date" id="clock-date"></div>
+<h1>Chaitali Mehta</h1>
+<div class="title">Senior Network Engineer</div>
+<div class="company">Hilton</div>
 </div>
-<div class="weather-container">
-<div class="weather-temp" id="weather-temp">--°C</div>
-<div class="weather-desc" id="weather-desc">Loading location...</div>
+<div class="widgets reveal">
+<div class="widget"><div class="icon">🕐</div><div class="value" id="clock">--:--</div><div class="label">Local Time</div></div>
+<div class="widget"><div class="icon">☀️</div><div class="value">22°C</div><div class="label">Weather</div></div>
 </div>
-<div class="info-section">
-<h3>Contact</h3>
-<div class="info-grid">
-<div class="info-item"><span class="label">Email</span><a href="mailto:chaitali.jmehta@gmail.com">chaitali.jmehta@gmail.com</a></div>
-<div class="info-item"><span class="label">Work Email</span><a href="mailto:chaitali.mehta@hilton.com">chaitali.mehta@hilton.com</a></div>
-<div class="info-item"><span class="label">LinkedIn</span><a href="https://uk.linkedin.com/in/chaitali-mehta-3225559" target="_blank">uk.linkedin.com</a></div>
-<div class="info-item"><span class="label">Instagram</span><a href="https://www.instagram.com/chaitalijigarmehta" target="_blank">@chaitalijigarmehta</a></div>
-<div class="info-item"><span class="label">Snapchat</span><a href="https://www.snapchat.com/add/chaitali071011" target="_blank">@chaitali071011</a></div>
-<div class="info-item"><span class="label">Personal Phone</span><a href="tel:07950470485">07950 470485</a></div>
-<div class="info-item"><span class="label">Work Phone</span><a href="tel:07956275397">07956 275 397</a></div>
-<div class="info-item"><span class="label">Facebook</span><a href="https://www.facebook.com/share/1EZZiR87D7/" target="_blank">Facebook</a></div>
-<div class="info-item"><span class="label">YouTube</span><a href="https://www.youtube.com/@chaitalimehta3926" target="_blank">@chaitalimehta3926</a></div>
+<div class="divider"></div>
+<div class="contacts">
+<div class="contact-row reveal"><div class="icon-wrap">✉️</div><a href="mailto:chaitali.jmehta@gmail.com">chaitali.jmehta@gmail.com</a></div>
+<div class="contact-row reveal"><div class="icon-wrap">🏢</div><a href="mailto:chaitali.mehta@hilton.com">chaitali.mehta@hilton.com</a></div>
+<div class="contact-row reveal"><div class="icon-wrap">📱</div><a href="tel:07950470485">07950 470 485</a></div>
+<div class="contact-row reveal"><div class="icon-wrap">💼</div><a href="tel:07956275397">07956 275 397</a></div>
+<div class="contact-row reveal"><div class="icon-wrap">🔗</div><a href="https://uk.linkedin.com/in/chaitali-mehta-3225559" target="_blank" rel="noopener">LinkedIn</a></div>
+<div class="contact-row reveal"><div class="icon-wrap">📸</div><a href="https://www.instagram.com/chaitalijigarmehta" target="_blank" rel="noopener">Instagram</a></div>
+<div class="contact-row reveal"><div class="icon-wrap">👥</div><a href="https://www.facebook.com/share/1EZZiR87D7/" target="_blank" rel="noopener">Facebook</a></div>
+<div class="contact-row reveal"><div class="icon-wrap">▶️</div><a href="https://youtube.com/@chaitalimehta3926" target="_blank" rel="noopener">YouTube</a></div>
+<div class="contact-row reveal"><div class="icon-wrap">👻</div><span>chaitali071011</span></div>
+<div class="contact-row pending reveal"><div class="icon-wrap">🐦</div><span>twitter.com/chaitalijmehta</span></div>
+<div class="contact-row pending reveal"><div class="icon-wrap">🐙</div><span>github.com/Chaitali1223</span></div>
 </div>
-</div>
-<div class="pending-section">
-<h3>Coming Soon</h3>
-<span class="pending-item" title="twitter.com/chaitalijmehta">Twitter</span>
-<span class="pending-item" title="github.com/Chaitali1223">GitHub</span>
-</div>
-<a class="vcard-btn" href="ChaitaliMehta.vcf" download>Download vCard &amp;darr;</a>
-<div class="social-links">
-<a class="social-link" href="https://uk.linkedin.com/in/chaitali-mehta-3225559" target="_blank" title="LinkedIn">
-<svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-</a>
-<a class="social-link" href="mailto:chaitali.jmehta@gmail.com" title="Email">
-<svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-</a>
-<a class="social-link" href="https://www.facebook.com/share/1EZZiR87D7/" target="_blank" title="Facebook">
-<svg viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-</a>
-<a class="social-link" href="https://www.instagram.com/chaitalijigarmehta" target="_blank" title="Instagram">
-<svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-</a>
-<a class="social-link" href="https://www.youtube.com/@chaitalimehta3926" target="_blank" title="YouTube">
-<svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-</a>
-<a class="social-link" href="mailto:chaitali.mehta@hilton.com" title="Work Email">
-<svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-</a>
-<a class="social-link" href="https://www.snapchat.com/add/chaitali071011" target="_blank" title="Snapchat">
-<svg viewBox="0 0 24 24"><path d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.031.51.075.045.203.09.401.09.272 0 .599-.092.985-.275.14-.07.29-.147.448-.228.584-.31 1.38-.736 2.277-.736.357 0 .718.067 1.075.2.783.307 1.405.902 1.753 1.688.307.697.327 1.514.058 2.375-.296.92-.87 1.74-1.278 2.288-.065.09-.13.168-.194.245-.43.534-.79.98-.79 1.664 0 .25.057.503.17.752.084.192.188.384.31.573.2.327.422.65.58 1.002.153.342.23.706.23 1.082 0 .94-.51 1.832-1.334 2.358-.72.462-1.648.694-2.76.694-1.209 0-2.131-.35-2.713-.676-.287-.162-.52-.304-.693-.406l-.17-.094c-.06-.033-.11-.054-.156-.073l-.027-.01c-.246-.087-.493-.073-.72.023-.33.144-.748.39-1.243.734-.474.33-1.063.74-1.758.74s-1.284-.41-1.758-.74c-.495-.345-.913-.59-1.243-.734-.227-.096-.474-.11-.72-.024l-.027.01c-.046.02-.096.04-.156.074l-.17.094c-.173.102-.406.244-.693.406-.582.326-1.504.676-2.713.676-1.112 0-2.04-.232-2.76-.694-.824-.526-1.334-1.418-1.334-2.358 0-.376.077-.74.23-1.082.158-.352.38-.675.58-1.002.122-.189.226-.381.31-.573.113-.249.17-.502.17-.752 0-.684-.36-1.13-.79-1.664-.064-.077-.129-.155-.194-.245-.408-.548-.982-1.368-1.278-2.288-.269-.861-.249-1.678.058-2.375.348-.786.97-1.38 1.753-1.688.357-.133.718-.2.1.275.39.183.718.275.99.275.198 0 .325-.045.401-.09-.01-.165-.02-.33-.032-.51l-.003-.06c-.104-1.628-.23-3.654.3-4.847C3.85 1.07 7.208.793 8.197.793c.705 0 1.28.356 1.667.883.123.176.242.37.353.572.11-.202.23-.396.353-.572.386-.527.962-.883 1.667-.883h.001Zm-.264 1.001c-.319 0-.597.178-.787.475-.163.256-.317.567-.463.896-.398.843-.686 1.837-.686 2.84 0 .226-.048.448-.142.658-.28.738-.073 1.597.555 2.175.328.291.738.49 1.197.582.572.112 1.156.168 1.743.168.587 0 1.17-.056 1.743-.168.458-.092.869-.29 1.198-.582.627-.578.834-1.437.554-2.175-.094-.21-.142-.432-.142-.658 0-1.003-.288-1.997-.686-2.84-.146-.329-.3-.64-.463-.896-.19-.297-.468-.475-.787-.475h-.001Z"/></svg>
-</a>
+<div class="actions reveal">
+<a href="/ChaitaliMehta.vcf" download class="btn btn-primary">💾 Save Contact</a>
+<button class="btn btn-secondary" id="shareBtn">🔗 Share</button>
 </div>
 </div>
 </div>
-</main>
-<footer><p>Built with &hearts; by <a href="https://uk.linkedin.com/in/chaitali-mehta-3225559" target="_blank">Chaitali Mehta</a></p></footer>
-<button class="music-toggle" id="musicToggle" title="Toggle Music" onclick="toggleMusic()">
-<svg id="musicIcon" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
-</button>
-<audio id="bgMusic" loop><source src="music.mp3" type="audio/mpeg"></audio>
+</div>
+</div>
+</div>
 <script>
-function enterSite(){document.getElementById('splash').classList.add('hide');document.getElementById('main').classList.add('visible');setTimeout(()=>document.getElementById('splash').style.display='none',800)}
-function updateClock(){const now=new Date();const hrs=now.getHours().toString().padStart(2,'0');const mins=now.getMinutes().toString().padStart(2,'0');const secs=now.getSeconds().toString().padStart(2,'0');document.getElementById('clock').textContent=hrs+':'+mins+':'+secs;const opts={weekday:'long',year:'numeric',month:'long',day:'numeric'};document.getElementById('clock-date').textContent=now.toLocaleDateString('en-GB',opts)}setInterval(updateClock,1000);updateClock();
-(async function initWeather(){try{const r=await fetch('https://wttr.in/?format=j1');const d=await r.json();const c=d.current_condition[0];document.getElementById('weather-temp').textContent='' + c.temp_C + '°C';document.getElementById('weather-desc').textContent=c.lang_source?c.lang_source[0].value:c.weatherDesc[0].value}catch(e){document.getElementById('weather-desc').textContent='Weather unavailable'}})();
-(function initParticles(){const c=document.getElementById('particles'),ctx=c.getContext('2d');function resize(){c.width=window.innerWidth;c.height=window.innerHeight}resize();window.addEventListener('resize',resize);const pts=[];const count=Math.min(80,Math.floor(c.width*c.height/15000));for(let i=0;i<count;i++)pts.push({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-0.5)*0.5,vy:(Math.random()-0.5)*0.5,r:Math.random()*2+1});function draw(){ctx.clearRect(0,0,c.width,c.height);pts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>c.width)p.vx*=-1;if(p.y<0||p.y>c.height)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(201,168,76,0.4)';ctx.fill()});for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle='rgba(201,168,76,'+(0.08*(1-d/120))+')';ctx.stroke()}}requestAnimationFrame(draw)}draw()})();
-function createShootingStar(){const s=document.createElement('div');s.className='shooting-star';s.style.top=Math.random()*50+'%';s.style.left=Math.random()*50+'%';s.style.animationDuration=(Math.random()*0.5+0.5)+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),1200)}setInterval(createShootingStar,2500)
-function createSparkle(x,y){for(let i=0;i<6;i++){const s=document.createElement('div');s.className='sparkle';const angle=Math.random()*Math.PI*2,dist=Math.random()*30+10;s.style.left=x+'px';s.style.top=y+'px';s.style.background=['#C9A84C','#E8D5A3','#D4AF37','#F0E68C'][Math.floor(Math.random()*4)];s.style.animationDuration=0.4+Math.random()*0.3+'s';const tx=Math.cos(angle)*dist,ty=Math.sin(angle)*dist;s.style.setProperty('--tx',tx+'px');s.style.setProperty('--ty',ty+'px');document.body.appendChild(s);setTimeout(()=>s.remove(),700)}}document.addEventListener('click',e=>createSparkle(e.clientX,e.clientY-50))
-function revealOnScroll(){document.querySelectorAll('.reveal').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight*0.85)el.classList.add('active')})}window.addEventListener('scroll',revealOnScroll);revealOnScroll();
-(function initTilt(){const card=document.getElementById('card');card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,cx=r.width/2,cy=r.height/2;const rotateY=((x-cx)/cx)*8,rotateX=((cy-y)/cy)*-8;card.style.transform='rotateY('+rotateY+'deg) rotateX('+rotateX+'deg)'})})();
-let musicPlaying=false;function toggleMusic(){const m=document.getElementById('bgMusic'),ic=document.getElementById('musicIcon');if(musicPlaying){m.pause();ic.innerHTML='<path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>'}else{m.play().then(()=>{musicPlaying=true}).catch(()=>{})}musicPlaying=!musicPlaying};
+timeout(()=>document.getElementById('splash').classList.add('hidden'),1500);
+function updateClock(){const n=new Date();let h=n.getHours(),m=String(n.getMinutes()).padStart(2,'0');const a=h>=12?'PM':'AM';h=h%12||12;document.getElementById('clock').textContent=h+':'+m+' '+a}updateClock();setInterval(updateClock,1000);
+const card=document.getElementById('card'),w=document.getElementById('cardWrapper');
+w.addEventListener('mousemove',e=>{const r=w.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform='rotateY('+(x*8)+'deg) rotateX('+(-y*8)+'deg)'});
+w.addEventListener('mouseleave',()=>{card.style.transform='rotateY(0deg) rotateX(0deg)'});
+w.addEventListener('touchmove',e=>{const t=e.touches[0],r=w.getBoundingClientRect(),x=(t.clientX-r.left)/r.width-.5,y=(t.clientY-r.top)/r.height-.5;card.style.transform='rotateY('+(x*8)+'deg) rotateX('+(-y*8)+'deg)'},{passive:true});
+const cv=document.getElementById('particles'),cx=cv.getContext('2d'),ps=[];function rs(){cv.width=window.innerWidth;cv.height=window.innerHeight}rs();window.addEventListener('resize',rs);
+class P{constructor(){this.x=Math.random()*cv.width;this.y=Math.random()*cv.height;this.s=Math.random()*2+.5;this.sy=-Math.random()*.3-.1;this.sx=(Math.random()-.5)*.2;this.o=Math.random()*.4+.1}update(){this.y+=this.sy;this.x+=this.sx;if(this.y<-10)this.reset(),this.y=cv.height+10}draw(){cx.beginPath();cx.arc(this.x,this.y,this.s,0,Math.PI*2);cx.fillStyle='rgba(201,169,110,'+this.o+')';cx.fill()};reset(){this.x=Math.random()*cv.width;this.y=Math.random()*cv.height}}
+for(let i=0;i<60;i++)ps.push(new P());
+function anim(){cx.clearRect(0,0,cv.width,cv.height);ps.forEach(p=>{p.update();p.draw()});requestAnimationFrame(anim)};
 </script>
 </body>
 </html>
