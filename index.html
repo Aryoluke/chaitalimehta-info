@@ -219,49 +219,6 @@
         #splash.hide { opacity: 0; pointer-events: none; }
         @keyframes sp { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
         
-        #music-toggle {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            z-index: 100;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.25);
-            color: #2c2417;
-            font-size: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        #music-toggle:hover {
-            background: rgba(255,255,255,0.25);
-            border-color: rgba(255,255,255,0.4);
-            transform: scale(1.05);
-        }
-        #toast {
-            position: fixed;
-            bottom: 80px;
-            right: 24px;
-            z-index: 100;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 12px;
-            padding: 8px 16px;
-            color: #2c2417;
-            font-size: 13px;
-            opacity: 0;
-            transition: opacity 0.3s;
-            pointer-events: none;
-        }
-        
         .shooting-star{position:fixed;width:2px;height:80px;background:linear-gradient(to bottom,rgba(201,168,76,0.8),transparent);transform:rotate(-35deg);animation:shoot 0.7s linear forwards;z-index:0;pointer-events:none;border-radius:2px}
         @keyframes shoot{ 0%{opacity:1;transform:rotate(-35deg) translateX(0) translateY(0)}100%{opacity:0;transform:rotate(-35deg) translateX(-250px) translateY(250px)}}
         
@@ -287,16 +244,12 @@
     
     <canvas id="particles"></canvas>
     
-    <button id="music-toggle" aria-label="Toggle music">🎵</button>
-    <audio id="bg-music" loop preload="none"><source src="" type="audio/mpeg"></audio>
-    <div id="toast">Music Off</div>
-    
     <div class="container">
         <div class="glass-card profile">
             <div class="cm-monogram">CM</div>
             <div class="name">Chaitali Mehta</div>
             <div class="subtitle-row" style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:2px;">
-                <span class="subtitle">Senior Network Engineer · Hilton</span>
+                <span class="subtitle">Senior Network Engineer 🌍 Hilton</span>
             </div>
             <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:6px;">
                 <span class="status-dot"></span>
@@ -307,53 +260,48 @@
             
             <div class="contact-section">
                 <a class="contact-pill" href="mailto:chaitali.jmehta@gmail.com">
-                    <span class="label">📧 chaitali.jmehta@gmail.com</span>
-                    <span class="arrow">→</span>
+                    <span class="label">✉️ chaitali.jmehta@gmail.com</span>
+                    <span class="arrow">↗</span>
                 </a>
                 <a class="contact-pill" href="mailto:chaitali.mehta@hilton.com">
                     <span class="label">🏢 chaitali.mehta@hilton.com</span>
-                    <span class="arrow">→</span>
+                    <span class="arrow">↗</span>
                 </a>
                 <a class="contact-pill" href="tel:07950470485">
                     <span class="label">📱 07950 470485</span>
-                    <span class="arrow">→</span>
+                    <span class="arrow">↗</span>
                 </a>
                 <a class="contact-pill" href="tel:07956275397">
-                    <span class="label">💼 07956 275 397</span>
-                    <span class="arrow">→</span>
+                    <span class="label">📞 07956 275 397</span>
+                    <span class="arrow">↗</span>
                 </a>
             </div>
             
             <button class="vcard-btn" onclick="downloadVCard()">
-                📇 Save Contact
+                📥 Save Contact
             </button>
         </div>
         
         <div class="social-section">
-            <a class="social-link" href="https://uk.linkedin.com/in/chaitali-mehta-3225559" target="_blank">
+            <a class="social-link" href="https://uk.linkedin.com/in/chaitali-mehata-3225559" target="_blank">
                 <span class="icon-wrap">💼</span>
                 <span class="label">LinkedIn</span>
-                <span class="arrow">→</span>
+                <span class="arrow">↗</span>
             </a>
-            <a class="social-link" href="https://www.instagram.com/chaitalijigarmehta" target="_blank">
+            <a class="social-link" href="https://www.instagram.com/chaitalijigarmehata" target="_blank">
                 <span class="icon-wrap">📸</span>
                 <span class="label">Instagram</span>
-                <span class="arrow">→</span>
+                <span class="arrow">↗</span>
             </a>
-            <a class="social-link" href="https://www.facebook.com/share/1EZZiR87D7/" target="_blank">
-                <span class="icon-wrap">👤</span>
+            <a class="social-link" href="https://www.facebook.com/share/1EZhiR87D7/" target="_blank">
+                <span class="icon-wrap">🌐</span>
                 <span class="label">Facebook</span>
-                <span class="arrow">→</span>
-            </a>
-            <a class="social-link" href="https://youtube.com/@chaitalimehta3926" target="_blank">
-                <span class="icon-wrap">▶️</span>
-                <span class="label">YouTube</span>
-                <span class="arrow">→</span>
+                <span class="arrow">↗</span>
             </a>
             <a class="social-link" href="https://www.snapchat.com/add/chaitali071011" target="_blank">
                 <span class="icon-wrap">👻</span>
                 <span class="label">Snapchat</span>
-                <span class="arrow">→</span>
+                <span class="arrow">↗</span>
             </a>
             <span class="social-link" style="cursor:default;opacity:0.6;">
                 <span class="icon-wrap">🐦</span>
@@ -361,7 +309,7 @@
                 <span class="pending-badge">pending</span>
             </span>
             <span class="social-link" style="cursor:default;opacity:0.6;">
-                <span class="icon-wrap">💻</span>
+                <span class="icon-wrap">🐙</span>
                 <span class="label">GitHub</span>
                 <span class="pending-badge">pending</span>
             </span>
@@ -494,37 +442,74 @@
             });
         }
         
-        (function() {
-            var musicBtn = document.getElementById('music-toggle');
-            var audio = document.getElementById('bg-music');
-            var toast = document.getElementById('toast');
-            var isMuted = true;
-            
-            function showToast(msg) {
-                toast.textContent = msg;
-                toast.style.opacity = '1';
-                setTimeout(function() { toast.style.opacity = '0'; }, 2000);
-            }
-            
-            musicBtn.addEventListener('click', function() {
-                if (isMuted) {
-                    audio.muted = false;
-                    audio.play().catch(function(){});
-                    musicBtn.textContent = '🔊';
-                    showToast('Music On');
-                } else {
-                    audio.muted = true;
-                    audio.pause();
-                    musicBtn.textContent = '🎵';
-                    showToast('Music Off');
-                }
-                isMuted = !isMuted;
-            });
-        })();
+        (function ss(){var s=document.createElement('div');s.className='shooting-star';s.style.left=Math.random()*80+'%';s.style.top=Math.random()*50+'%';s.style.animationDuration=(0.5+Math.random()*0.6)+'s';document.body.appendChild(s);setTimeout(function(){s.remove()},1500);setTimeout(ss,3500+Math.random()*500)}());
         
-        (function ss(){var s=document.createElement('div');s.className='shooting-star';s.style.left=Math.random()*80+'%';s.style.top=Math.random()*50+'%';s.style.animationDuration=(0.5+Math.random()*0.6)+'s';document.body.appendChild(s);setTimeout(function(){s.remove()},1500);setTimeout(ss,3500+Math.random()*5000)}());
-        
-        fetch('https://api.open-meteo.com/v1/forecast?latitude=51.62&longitude=-0.32&current_weather=true').then(function(r){return r.json()}).then(function(d){var w=d.current_weather;var codes={0:'☀️',1:'⛅',2:'⛅',3:'☁️',45:'⛅',48:'⛅',51:'🌦',61:'🌧',63:'🌧',65:'🌧',71:'❄️',73:'❄️',95:'⛈',96:'⛈',99:'⛈'};var e=codes[w.weathercode]||'☁️';document.getElementById('weather').textContent=e+' '+w.temperature+'°C ~ '+w.windspeed+' km/h'})
+        fetch('https://api.open-meteo.com/v1/forecast?latitude=51.62&longitude=-0.32&current_weather=true').then(function(r){return r.json()}).then(function(d){var w=d.current_weather;var codes={0:'☀️ Clear',1:'🌤 Mostly Clear',2:'⛅ Partly Cloudy',3:'☁️ Overcast',45:'🌫 Fog',48:'🌫 Fog',51:'🌦 Light Drizzle',53:'🌦 Drizzle',55:'🌧 Drizzle',56:'🧊 Light Freezing Drizzle',57:'🧊 Freezing Drizzle',61:'🌧 Light Rain',63:'🌧 Rain',65:'🌧 Heavy Rain',66:'🧊 Light Freezing Rain',67:'🧊 Heavy Freezing Rain',71:'❄️ Light Snow',73:'❄️ Snow',75:'❄️ Heavy Snow',77:'🌨 Snow Grains',80:'🌦 Light Showers',81:'🌧 Showers',82:'⛈ Heavy Showers',85:'🌨 Snow Showers',86:'🌨 Heavy Snow Showers',95:'⛈ Thunderstorm',96:'⛈ Thunderstorm With Hail',99:'⛈ Thunderstorm With Heavy Hail'};var e=codes[w.weathercode]||'🌤 Variable';document.getElementById('weather').textContent=e+' '+w.temperature+'°C ~ '+w.windspeed+' km/h'});
     </script>
+    <div id="music-player" style="position:fixed;bottom:-9999px;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none"></div>
+    <button id="music-toggle" aria-label="Toggle music" style="position:fixed;bottom:24px;right:24px;z-index:100;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.25);color:#2c2417;font-size:20px;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;justify-content:center">🎵</button>
+    <div id="toast" style="position:fixed;bottom:80px;right:24px;z-index:100;background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);border-radius:12px;padding:8px 16px;color:#2c2417;font-size:13px;opacity:0;transition:opacity 0.3s;pointer-events:none">🎵 Sapphire - Ed Sheeran</div>
+
+    <script>
+var playerReady = false;
+var musicBtn = document.getElementById('music-toggle');
+var toast = document.getElementById('toast');
+var isPlaying = false;
+
+function showToast(msg) {
+    toast.textContent = msg;
+    toast.style.opacity = '1';
+    setTimeout(function() { toast.style.opacity = '0'; }, 2000);
+}
+
+var tag = document.createElement('script');
+tag.src = 'https://www.youtube.com/iframe_api';
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+window.onYouTubeIframeAPIReady = function() {
+    player = new YT.Player('music-player', {
+        height: '1',
+        width: '1',
+        videoId: 'JgDNFQ2RaLQ',
+        playerVars: {
+            autoplay: 0,
+            controls: 0,
+            disablekb: 1,
+            fs: 0,
+            modestbranding: 1,
+            loop: 1,
+            playlist: 'JgDNFQ2RaLQ',
+            start: 10
+        },
+        events: {
+            onReady: function() {
+                playerReady = true;
+            }
+        }
+    });
+};
+
+musicBtn.addEventListener('click', function() {
+    if (!playerReady) {
+        showToast('Loading...');
+        return;
+    }
+    if (isPlaying) {
+        player.pauseVideo();
+        musicBtn.textContent = '🎵';
+        showToast('Music Paused');
+    } else {
+        player.playVideo();
+        musicBtn.textContent = '🔊';
+        showToast('Sapphire - Ed Sheeran');
+    }
+    isPlaying = !isPlaying;
+});
+
+musicBtn.onmouseover = function() { this.style.background = 'rgba(255,255,255,0.25)'; this.style.borderColor = 'rgba(255,255,255,0.4)'; this.style.transform = 'scale(1.05)'; };
+musicBtn.onmouseout = function() { this.style.background = 'rgba(255,255,255,0.15)'; this.style.borderColor = 'rgba(255,255,255,0.25)'; this.style.transform = 'scale(1)'; };
+</script>
 </body>
 </html>
