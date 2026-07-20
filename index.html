@@ -4,33 +4,48 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chaitali Mehta - TapID</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&amp;font-family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}:root{--cream:#faf8f0;--gold:#c9a84c;--gold-light:#e8d48b;--dark:#1a1a2e;--text-cream:#2d2416}body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text-cream);overflow-x:hidden}#splash{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#1a1a2e,#16213e);display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity 0.8s ease}#splash.hidden{opacity:0;pointer-events:none}.splash-text{font-family:'Playfair Display',serif;font-size:4rem;color:var(--gold);animation:pulse 1.5s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.7;transform:scale(1.05)}}#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}#main{position:relative;z-index:1;opacity:0;transition:opacity 1s ease}.card-container{perspective:1000px;display:flex;justify-content:center;padding:60px 20px}.id-card{width:380px;max-width:90vw;background:linear-gradient(145deg,var(--cream),#f0e6cc);border-radius:20px;padding:40px 30px;box-shadow:0 20px 60px rgba(201,168,76,0.3);border:2px solid var(--gold);transform-style:preserve-3d;transition:transform 0.1s ease;cursor:pointer}.id-card h1{font-family:'Playfair Display',serif;font-size:2rem;color:var(--dark)}.id-card .title{font-size:0.9rem;color:var(--gold);font-weight:600;text-transform:uppercase;margin-bottom:20px}.divider{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:20px 0}.cr{display:flex;align-items:center;gap:10px;margin:10px 0;font-size:0.85rem}.cr a{color:var(--text-cream);text-decoration:none;word-break:break-all}.social-links{display:flex;gap:15px;justify-content:center;margin-top:25px;flex-wrap:wrap}.social-links a{width:42px;height:42px;border-radius:50%;background:var(--gold);color:white;text-decoration:none;display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:600;transition:all 0.3s ease}.widgets{display:flex;gap:20px;justify-content:center;padding:30px 20px;flex-wrap:wrap}.widget{background:white;border-radius:15px;padding:20px 25px;box-shadow:0 5px 20px rgba(0,0,0,0.05);border:1px solid rgba(201,168,76,0.2);min-width:150px;text-align:center}.wl{font-size:0.75rem;color:var(--gold);text-transform:uppercase}.wv{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--dark)}.btn{padding:12px 30px;border-radius:30px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--dark);font-weight:600;text-decoration:none;border:none;cursor:pointer;font-family:'Inter',sans-serif}.reveal{opacity:0;transform:translateY(30px);transition:all 0.8s ease}.reveal.active{opacity:1;transform:translateY(0)}@media(max-width:768px){.id-card{padding:30px 20px}.widgets{flex-direction:column;align-items:center}}</style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--cream:#faf8f0;--gold:#c9a84c;--gold-light:#e8d48b;--dark:#1a1a2e;--text-cream:#2d2416}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text-cream);overflow-x:hidden}
+#splash{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#1a1a2e,#16213e);display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity 0.8s ease}
+#splash.hide{opacity:0;pointer-events:none}
+.splash-text{font-family:'Playfair Display',serif;font-size:4rem;color:var(--gold);animation:pulse 1.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.7;transform:scale(1.05)}}
+#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#main{position:relative;z-index:1}
+.reveal{opacity:0;transform:translateY(30px);transition:all 0.8s ease}
+.reveal.active{opacity:1;transform:translateY(0)}
+.card-container{perspective:1000px;display:flex;justify-content:center;padding:60px 20px}
+.id-card{width:380px;max-width:90vw;background:linear-gradient(145deg,var(--cream),#f0e6cc);border-radius:20px;padding:40px 30px;box-shadow:0 20px 60px rgba(201,168,76,0.3);border:2px solid var(--gold);transform-style:preserve-3d;transition:transform 0.1s ease;cursor:pointer}
+.id-card h1{font-family:'Playfair Display',serif;font-size:2rem;color:var(--dark)}
+.id-card .title{font-size:0.9rem;color:var(--gold);font-weight:600;text-transform:uppercase;margin-bottom:20px}
+.divider{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:20px 0}
+.cr{display:flex;align-items:center;gap:10px;margin:10px 0;font-size:0.85rem}
+.cr a{color:var(--text-cream);text-decoration:none;word-break:break-all}
+.social-links{display:flex;gap:15px;justify-content:center;margin-top:25px;flex-wrap:wrap}
+.social-links a{width:42px;height:42px;border-radius:50%;background:var(--gold);color:white;text-decoration:none;display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:600;transition:all 0.3s ease}
+.widgets{display:flex;gap:20px;justify-content:center;padding:30px 20px;flex-wrap:wrap}
+.widget{background:white;border-radius:15px;padding:20px 25px;box-shadow:0 5px 20px rgba(0,0,0,0.05);border:1px solid rgba(201,168,76,0.2);min-width:150px;text-align:center}
+.wl{font-size:0.75rem;color:var(--gold);text-transform:uppercase}
+.wv{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--dark)}
+.btn{padding:12px 30px;border-radius:30px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--dark);font-weight:600;text-decoration:none;border:none;cursor:pointer;font-family:'Inter',sans-serif}
+@media(max-width:768px){.id-card{padding:30px 20px}.widgets{flex-direction:column;align-items:center}}
+</style>
 </head>
 <body>
 <div id="splash"><span class="splash-text">CM</span></div>
 <canvas id="particles"></canvas>
 <div id="main">
 <div class="widgets reveal"><div class="widget"><div class="wl">Time</div><div class="wv" id="clock"></div></div></div>
-<div class="card-container reveal"><div class="id-card" id="ic"><h1>Chaitali Mehta</h1><div class="title">Senior Network Engineer at Hilton</div><div class="divider"></div><div class="cr"><a href="mailto:chaitali.jmehta@gmail.com">chaitali.jmehta@gmail.com</a></div><div class="cr"><a href="mailto:chaitali.mehta@hilton.com">chaitali.mehta@hilton.com</a></div><div class="cr"><a href="tel:07950470485">07950 470 485</a></div><div class="cr"><a href="tel:07956275397">07956 275 397</a></div><div class="divider"></div><div class="social-links"><a href="https://uk.linkedin.com/in/chaitali-mehta-3225559" target="_blank">in</a><a href="https://www.instagram.com/chaitalijigarmehta" target="_blank">ig</a><a href="https://www.facebook.com/share/1EZZiR87D7/" target="_blank">fb</a><a href="https://www.youtube.com/@chaitalimehta3926" target="_blank">yt</a><a href="https://twitter.com/chaitalijmehta" target="_blank">X</a><a href="https://github.com/Chaitali1223" target="_blank">gh</a></div><div style="text-align:center;margin-top:15px"><a href="#" class="btn" id="dv">Download vCard</a></div></div></div>
+<div class="card-container reveal"><div class="id-card" id="ic"><h1>Chaitali Mehta</h1><div class="title">Senior Network Engineer at Hilton</div><div class="divider"></div><div class="cr"><a href="mailto:chaitali.jmehta@gmail.com">chaitali.jmehta@gmail.com</a></div><div class="cr"><a href="mailto:chaitali.mehta@hilton.com">chaitali.mehta@hilton.com</a></div><div class="cr"><a href="tel:07950 470 485">07950 470 485</a></div><div class="cr"><a href="tel:07956 275 397">07956 275 397</a></div><div class="divider"></div><div class="social-links"><a href="https://uk.linkedin.com/in/chaitali-mehta-3225559" target="_blank">in</a><a href="https://www.instagram.com/chaitalijigarmehta" target="_blank">ig</a><a href="https://www.facebook.com/share/1EZhiR87D7/" target="_blank">fb</a><a href="https://www.youtube.com/@chaitalimehta3926" target="_blank">yt</a><a href="https://twitter.com/chaitalijmehta" target="_blank">X</a><a href="https://github.com/Chaitali1223" target="_blank">gh</a></div><div style="text-align:center;margin-top:15px"><a href="#" class="btn" id="dv">Download vCard</a></div></div></div>
 <footer class="reveal">2025 Chaitali Mehta - TapID</footer>
 </div>
 <script>
-setTimeout(()=>{document.getElementById('splash').classList.add('hidden');document.getElementById('main').style.opacity='1'},2000);setInterval(()=>{document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})},1000);const c=document.getElementById('particles'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;let P=[];for(let i=0;i<40;i++)P.push({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*2+1,dx:(Math.random()-0.5)*0.4,dy:(Math.random()-0.5)*0.4});function dr(){x.clearRect(0,0,c.width,c.height);P.forEach(p=>{x.beginPath();x.arc(p.x,p.y,p.r,0,Math.PI*2);x.fillStyle='rgba(201,168,76,0.3)';x.fill();p.x+=p.dx;p.y+=p.dy;if(p.x<0||p.x>c.width)p.dx*=-1;if(p.y<0||p.y>c.height)p.dy*=-1});requestAnimationFrame(dr)}dr();document.getElementById('ic').addEventListener('mousemove',e=>{const r=document.getElementById('ic').getBoundingClientRect();document.getElementById('ic').style.transform='rotateY('+(((e.clientX-r.left)/r.width-0.5)*20)+'deg) rotateX('+(-((e.clientY-r.top)/r.height-0.5)*20)+'deg)'});document.querySelectorAll('.reveal').forEach(el=>{new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('active')})},{threshold:0.1}).observe(el)});document.getElementById('dv').addEventListener('click',e=>{e.preventDefault();const v='BEGIN:VCARD
-VERSION:3.0
-FN:Chaitali Mehta
-ORG:Hilton
-TITLE:Senior Network Engineer
-EMAIL;TYPE=INTERNET:chaitali.jmehta@gmail.com
-EMAIL;TYPE=WORK:chaitali.mehta@hilton.com
-TEL;TYPE=CELL:07950470485
-TEL;TYPE=WORK:07956 275 397
-URL;TYPE=WORK:https://uk.linkedin.com/in/chaitali-mehta-3225559
-URL:https://www.instagram.com/chaitalijigarmehta
-URL:https://www.facebook.com/share/1EZZiR87D7/
-NOTE:Chaitali Mehta - Senior Network Engineer at Hilton (since 2018)
-END:VCARD';const b=new Blob([v],{type:'text/vcard'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='ChaitaliMehta.vcf';a.click()});
+setTimeout(function(){document.getElementById('splash').classList.add('hide')},1500);
+setInterval(()=>{document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})},1000);
+const c=document.getElementById('particles'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;let P=[];for(let i=0;i<40;i++)P.push({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*2+1,dx:(Math.random()-0.5)*0.4,dy:(Math.random()-0.5)*0.4});function dr(){x.clearRect(0,0,c.width,c.height);P.forEach(p=>{x.beginPath();x.arc(p.x,p.y,p.r,0,Math.PI*2);x.fillStyle='rgba(201,168,76,0.3)';x.fill();p.x+=p.dx;p.y+=p.dy;if(p.x<0||p.x>c.width)p.dx*=-1;if(p.y<0||p.y>c.height)p.dy*=-1});requestAnimationFrame(dr)}dr();document.getElementById('ic').addEventListener('mousemove',e=>{const r=document.getElementById('ic').getBoundingClientRect();document.getElementById('ic').style.transform='rotateY('+((e.clientX-r.left)/r.width-0.5)*20+'deg) rotateX('+(-(e.clientY-r.top)/r.height-0.5)*20+'deg)'});document.querySelectorAll('.reveal').forEach(el=>{new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('active')})},{threshold:0.1}).observe(el)});document.getElementById('dv').addEventListener('click',e=>{e.preventDefault();const v='BEGIN:VCARD\nVERSION:3.0\nFN:Chaitali Mehta\nORG:Hilton\nTITLE:Senior Network Engineer\nEMAIL;TYPE=INTERNET:chaitali.jmehta@gmail.com\nEMAIL;TYPE=WORK:chaitali.mehta@hilton.com\nTEL;TYPE=CELL:07950470485\nTEL;TYPE=WORK:07956 275 397\nURL;TYPE=WORK:https://uk.linkedin.com/in/chaitali-mehta-3225559\nURL:https://www.instagram.com/chaitalijigarmehta\nURL:https://www.facebook.com/share/1EZhiR87D7/\nNOTE:Chaitali Mehta - Senior Network Engineer at Hilton (since 2018)\nEND:VCARD';const b=new Blob([v],{type:'text/vcard'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='ChaitaliMehta.vcf';a.click()});
 </script>
 </body>
 </html>
